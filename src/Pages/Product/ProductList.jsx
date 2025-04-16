@@ -6,7 +6,7 @@ const ProductList = () => {
   const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/products')
+    axios.get('https://manuback.vercel.app/api/products')
       .then((res) => {
         const flatProducts = res.data.flatMap((cat) => cat.products);
         setAllProducts(flatProducts);

@@ -7,7 +7,7 @@ const MyContextProvider = ({children}) => {
 
   const apiUrl = process.env.REACT_APP_API_URL ;
 
-  const url = 'http://localhost:5000'
+  const url = 'https://manuback.vercel.app'
     //for api calling start
 
  const[apiloader,setApiloader]=useState(true)

@@ -11,7 +11,7 @@ const CategoryPage = () => {
 
   useEffect(() => {
     console.log('Fetching category data for:', decodeURIComponent(categoryName));
-    axios.get('http://localhost:5000/api/products')
+    axios.get('https://manuback.vercel.app/api/products')
       .then(res => {
         console.log('All categories:', res.data);
         const categoryObj = res.data.find(

@@ -10,7 +10,7 @@ const ProductDetails = () => {
   useEffect(() => {
     // Fetch the single product by its route slug
     axios
-      .get(`http://localhost:5000/api/products/${route}`)
+      .get(`https://manuback.vercel.app/api/products/${route}`)
       .then((res) => setProduct(res.data))
       .catch((err) => console.error("Product fetch error:", err));
   }, [route]);

@@ -8,7 +8,7 @@ const ProductType = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/products')
+    axios.get('https://manuback.vercel.app/api/products')
       .then(res => setCategories(res.data))
       .catch(err => console.error(err));
   }, []);
