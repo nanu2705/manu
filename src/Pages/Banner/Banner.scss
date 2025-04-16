@@ -1,0 +1,132 @@
+@import "../Mixin.scss";
+
+.banner-slider {
+    max-width: 1200px;
+    overflow: hidden;
+    padding: 2rem;
+    margin: 0 auto;
+  
+    // background-color: red;
+    
+    .banner-slide {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+        
+
+      @include max400{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+      }
+
+      @include max525{
+       flex-wrap: nowrap;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+      }
+
+
+      .banner-image {
+        flex: 1;
+        // min-width: 300px;
+        padding: 1rem;
+  
+
+        @include max400{
+            
+            padding: 0.5rem;
+            // background-color: pink;
+        }
+        img {
+          width: 500px;
+          height: 500px;
+          border-radius: 1rem;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+          @include max1080{
+            width: 400px;
+            height: 400px;
+          }
+
+          @include max900{
+            width: 300px;
+            height: 300px;
+          }
+
+            @include max768{
+                width: 250px;
+                height: 250px;
+            }
+
+          @include max525{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+          }  
+        }
+      }
+  
+      .banner-content {
+        flex: 1;
+        // min-width: 300px;
+        padding: 1rem 2rem;
+        // background-color: rgb(72, 0, 255);
+  
+
+        @include max400{
+            padding: 0.1rem 2rem;
+        }
+        
+        
+        h1 {
+          font-size: 2rem;
+          color: #b89b2d;
+          margin-bottom: 1rem;
+
+          @include max768{
+            font-size: 1.2rem;
+          }
+
+          @include max525{
+           font-size: 1rem;
+           }
+        }
+  
+        p {
+          font-size: 1.1rem;
+          color: #444;
+          margin-bottom: 1.5rem;
+          line-height: 1.6;
+
+          @include max768{
+            font-size: 1rem;
+          }
+
+          @include max525{
+            font-size: 0.75rem;
+            }
+        }
+  
+        .banner-button {
+          padding: 0.75rem 1.5rem;
+          background-color: #b89b2d;
+          color: white;
+          border: none;
+          border-radius: 30px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background 0.3s ease;
+  
+          &:hover {
+            background-color: #a18325;
+          }
+        }
+      }
+    }
+  }
+  

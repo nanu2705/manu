@@ -1,0 +1,50 @@
+// Mixins.scss
+
+
+
+@mixin max400 {
+    @media only screen and (max-width: 400px) {
+    @content;
+    }
+    }
+
+    @mixin max425 {
+        @media only screen and (max-width: 425px) {
+        @content;
+        }
+        }
+
+@mixin max525 {
+    @media only screen and (max-width: 525px) {
+    @content;
+    }
+    }
+
+@mixin max600 {
+    @media only screen and (max-width: 600px) {
+    @content;
+    }
+    }
+ 
+    @mixin max678 {
+        @media only screen and (max-width: 678px) {
+        @content;
+        }
+        }    
+@mixin max768 {
+    @media only screen and (max-width: 768px) {
+    @content;
+    }
+    }
+
+@mixin max900 {
+    @media only screen and (max-width: 900px) {
+    @content;
+    }
+    }
+
+    @mixin max1080 {
+        @media only screen and (max-width: 1080px) {
+        @content;
+        }
+        }    

@@ -1,0 +1,103 @@
+.footer {
+    background-color: #f8f5f2;
+    color: #333;
+    padding: 3rem 1.5rem 1rem;
+    font-family: 'Poppins', sans-serif;
+    border-top: 1px solid #e0dcd7;
+  
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    
+  
+    .footer-section {
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #b89b2d;
+      }
+  
+      p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+  
+        li {
+          margin-bottom: 0.5rem;
+          font-size: 0.95rem;
+          cursor: pointer;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+  
+      .newsletter-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+  
+        input {
+          padding: 0.6rem 1rem;
+          border: 1px solid #ccc;
+          border-radius: 25px;
+          font-size: 0.95rem;
+          outline: none;
+        }
+  
+        button {
+          padding: 0.6rem 1rem;
+          background-color: #b89b2d;
+          color: white;
+          border: none;
+          border-radius: 25px;
+          cursor: pointer;
+          font-size: 0.95rem;
+          transition: background 0.3s ease;
+  
+          &:hover {
+            background-color: #8d781f;
+          }
+        }
+      }
+  
+      &.social-section {
+        .social-icons {
+          display: flex;
+          gap: 1rem;
+          margin-top: 0.5rem;
+          transition: transform 0.2s ease;
+  
+          a {
+            color: #b89b2d;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+  
+            &:hover {
+              color: #8d781f;
+              transform: scale(1.1);
+            }
+          }
+        }
+  
+        
+      }
+    }
+}
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #777;
+    }
+  }
+  

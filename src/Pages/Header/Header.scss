@@ -1,0 +1,194 @@
+@import "../Mixin.scss";
+
+.header-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    padding: 5px 80px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.058);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+ background-color: white;
+
+@include max400{
+  padding: 5px 10px;
+}
+  @include max525{
+    padding: 5px 20px;
+  }
+    .header-logo{
+        // background-color: blue;
+      img{
+        height: 80px;
+        width: 180px;
+      }
+
+      @include max400{
+        img{
+            height: 60px;
+            width: 90px;
+        }
+      }
+    }
+
+    .header-center{
+    //  background-color: violet;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 50px;
+
+      @include max900{
+        display: none;
+      }
+     span{
+         
+        font-size: 18px;
+        a{
+            text-decoration: none;
+            color: grey;
+
+            &:hover{
+             color: violet;
+             border-bottom: 1px solid rgba(128, 128, 128, 0.389);
+             transition: all 0.3s ease-in-out;
+            }
+        }
+     }
+    }
+      
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        img {
+            width: 25px;
+            height: 25px;
+          }
+
+          @include max400{
+            img{
+                width: 20px;
+                height: 20px; 
+            }
+        }
+      
+        .header-profile {
+          position: relative;
+          cursor: pointer;
+      
+        
+          @include max400{
+            img{
+                width: 20px;
+                height: 20px; 
+            }
+        }
+          .header-dropdown {
+            position: absolute;
+            top: 100%;
+            left: -20px;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            width: 150px;
+            z-index: 10;
+      
+            p {
+              padding: 10px;
+              margin: 0;
+              cursor: pointer;
+              transition: background 0.2s;
+      
+              &:hover {
+                background-color: #f0f0f0;
+              }
+            }
+          }
+      
+          &:hover .header-dropdown,
+          .header-dropdown:hover {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        .header-cart{
+            position: relative;
+
+            @include max400{
+              img{
+                  width: 20px;
+                  height: 20px; 
+              }
+          }
+            p{
+                position: absolute;
+                top: 0px;
+                right: -2px;
+                background-color: grey;
+                color: white;
+                border-radius: 50%;
+                padding: 5px;
+                font-size: 10px;
+
+                @include max400{
+                  font-size: 8px;
+                  padding: 3px;
+                  top: 1px;
+                  right: -3px;
+                }
+            }
+    }
+
+    .header-wishlist{
+        position: relative;
+
+        img{
+          width: 28px;
+          height: 28px; 
+        }
+
+       
+        @include max400{
+            img{
+                width: 20px;
+                height: 20px; 
+            }
+        }
+
+        p{
+            position: absolute;
+            top: 0px;
+            right: -2px;
+            background-color: grey;
+            color: white;
+            border-radius: 50%;
+            padding: 5px;
+            font-size: 10px;
+
+            @include max400{
+              font-size: 8px;
+              padding: 3px;
+              top: 1px;
+              right: -3px;
+            }
+        }
+    }
+
+    .header-mobileview{
+        display: none;
+        @include max900{
+            display: block;
+        }
+  
+    }
+      }
+
+}

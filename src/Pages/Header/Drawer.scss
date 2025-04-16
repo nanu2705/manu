@@ -1,0 +1,64 @@
+//  @import "../Mixin.scss";
+
+/* Overlay background */
+.drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.0); /* start transparent */
+    pointer-events: none;           /* prevent click when hidden */
+    transition: background 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  /* When modal is open */
+  .drawer-overlay.show {
+    background: rgba(0, 0, 0, 0.4); /* fade in background */
+    pointer-events: auto;
+  }
+  
+  /* Drawer panel */
+  .drawer-main {
+    position: fixed;
+    top: 144px;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background: white;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%); /* hidden to the left */
+    transition: transform 0.3s ease-in-out;
+    z-index: 99999;
+    padding: 1.5rem 1rem;
+  } 
+  
+  /* Slide in when open */
+  .drawer-overlay.show .drawer-main {
+    transform: translateX(0); /* slide into view */
+  }
+  
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .drawer-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+    padding: 30px 20px;
+    // background-color: red;
+
+    a{
+        text-decoration: none;
+        color: rgb(106, 102, 102);
+    }
+  }
+ 
