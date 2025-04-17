@@ -7,8 +7,8 @@ const MyContextProvider = ({children}) => {
 
   const apiUrl = process.env.REACT_APP_API_URL ;
 
-  // const url = 'https://manuback.vercel.app'
-  const url = 'http://localhost:5000'
+  const url = 'https://manuback.vercel.app'
+  // const url = 'http://localhost:5000'
 
 
     //for api calling start
