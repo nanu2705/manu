@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
 import ProductCard from './ProductCard';
+import MyContext from '../Context/MyContext';
 
 const ProductList = () => {
-  const [allProducts, setAllProducts] = useState([]);
+  const {url,allProducts, setAllProducts} =useContext(MyContext)
 
   useEffect(() => {
-    axios.get('https://manuback.vercel.app/api/products')
+    axios.get(`${url}/api/products`)
       .then((res) => {
         const flatProducts = res.data.flatMap((cat) => cat.products);
         setAllProducts(flatProducts);

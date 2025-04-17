@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect} from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import './ProductType.scss';
+import MyContext from '../Context/MyContext';
 
 const ProductType = () => {
-  const [categories, setCategories] = useState([]);
-  const navigate = useNavigate();
+
+
+  const {url,Navigate,categories, setCategories} =useContext(MyContext)
+  
 
   useEffect(() => {
-    axios.get('https://manuback.vercel.app/api/products')
+    axios.get(`${url}/api/products`)
       .then(res => setCategories(res.data))
       .catch(err => console.error(err));
-  }, []);
+  }, );
 
   return (
     <div className="product-types">
@@ -21,7 +23,7 @@ const ProductType = () => {
           <div
             className="category-card"
             key={cat.category}
-            onClick={() => navigate(`/category/${encodeURIComponent(cat.category)}`)}
+            onClick={() => Navigate(`/category/${encodeURIComponent(cat.category)}`)}
           >
             <img src={cat.mainimg} alt={cat.category} />
             <h3>{cat.category}</h3>

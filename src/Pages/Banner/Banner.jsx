@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import './Banner.scss';
 import { assets } from '../../Assets/assets/frontend_assets/assets';
 import { motion, AnimatePresence } from 'framer-motion';
+import MyContext from '../Context/MyContext';
 
 const banners = [
   {
@@ -22,14 +23,14 @@ const banners = [
 ];
 
 const Banner = () => {
-  const [index, setIndex] = useState(0);
+  const {index, setIndex} =useContext(MyContext)
 
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex(prev => (prev + 1) % banners.length);
     }, 5000); // change every 5 seconds
     return () => clearInterval(timer);
-  }, []);
+  }, );
 
   return (
     <div className="banner-slider">

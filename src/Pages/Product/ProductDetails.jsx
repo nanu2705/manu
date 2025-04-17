@@ -1,19 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './ProductDetails.scss';
+import MyContext from '../Context/MyContext';
 
 const ProductDetails = () => {
   const { route } = useParams();
-  const [product, setProduct] = useState(null);
+ const {url,product, setProduct} =useContext(MyContext)
 
   useEffect(() => {
     // Fetch the single product by its route slug
     axios
-      .get(`https://manuback.vercel.app/api/products/${route}`)
+      .get(`${url}/api/products/${route}`)
       .then((res) => setProduct(res.data))
       .catch((err) => console.error("Product fetch error:", err));
-  }, [route]);
+  }, );
 
   if (!product) return <div>Loading...</div>;
 
